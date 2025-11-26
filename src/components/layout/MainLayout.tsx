@@ -16,7 +16,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <div className="max-w-[1400px] mx-auto px-8 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           {/* Left Sidebar - Profile Card */}
-          <aside className="lg:col-span-3">
+          <aside className="lg:col-span-3 flex justify-center">
             <ProfileCard />
           </aside>
 

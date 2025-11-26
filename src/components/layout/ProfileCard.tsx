@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
 import { getPersonalInfo, getSocialLinks } from '@/lib/firebase/firestore'
 import { PersonalInfo, SocialLink } from '@/types/admin'
@@ -9,6 +9,7 @@ import { Globe, Twitter, Instagram, Github, Linkedin, Mail } from 'lucide-react'
 export default function ProfileCard() {
   const [personalInfo, setPersonalInfo] = useState<PersonalInfo | null>(null)
   const [socialLinks, setSocialLinks] = useState<SocialLink[]>([])
+  const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     async function fetchData() {
@@ -26,6 +27,24 @@ export default function ProfileCard() {
     fetchData()
   }, [])
 
+  useEffect(() => {
+    // Dynamic sticky center positioning
+    const updateStickyPosition = () => {
+      if (cardRef.current) {
+        const card = cardRef.current
+        const cardHeight = card.offsetHeight
+        const viewportHeight = window.innerHeight
+        const topOffset = (viewportHeight - cardHeight) / 2
+        
+        card.style.setProperty('--sticky-top', `${topOffset}px`)
+      }
+    }
+
+    updateStickyPosition()
+    window.addEventListener('resize', updateStickyPosition)
+    return () => window.removeEventListener('resize', updateStickyPosition)
+  }, [personalInfo, socialLinks])
+
   const getIcon = (platform: string) => {
     const lowerPlatform = platform.toLowerCase()
     if (lowerPlatform.includes('twitter') || lowerPlatform.includes('x')) return <Twitter size={24} />
@@ -37,7 +56,16 @@ export default function ProfileCard() {
   }
 
   return (
-    <div className="bg-white border-2 border-black rounded-2xl p-10 h-fit sticky top-8 mx-auto max-w-[320px]">
+    <div 
+      ref={cardRef}
+      className="bg-white border-2 border-black rounded-2xl p-10 h-fit sticky mx-auto max-w-[320px]"
+      style={{
+        top: 'var(--sticky-top, 50%)',
+        transform: 'translateY(-50%)',
+        marginLeft: '40px',
+        marginRight: '40px',
+      }}
+    >
       {/* Avatar - Always show, even if no image */}
       <div className="relative w-[160px] h-[160px] mx-auto mb-10 rounded-full overflow-hidden border-4 border-black bg-gray-100">
         {personalInfo?.avatar ? (
