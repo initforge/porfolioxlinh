@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative py-12 md:py-16"
+      className="relative py-8 md:py-12 lg:py-16"
     >
       {/* Three.js Background - Lazy loaded */}
       {showThreeJS && (
@@ -66,14 +66,14 @@ export default function Hero() {
         <div className="max-w-5xl">
           {/* Headline - Large, split into 3 lines */}
           <TextReveal delay={0.2}>
-            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-10 leading-[1.1] text-black">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-12 leading-tight text-black">
               Biến Ý Tưởng<br />Của Bạn<br />Thành Hiện Thực
             </h1>
           </TextReveal>
           
-          {/* Description - 2 lines, simple text, no buttons */}
+          {/* Description - 2 lines, simple text */}
           <TextReveal delay={0.3}>
-            <div className="space-y-4">
+            <div className="space-y-3">
               <p className="text-xl md:text-2xl text-black leading-relaxed">
                 Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn.
               </p>
