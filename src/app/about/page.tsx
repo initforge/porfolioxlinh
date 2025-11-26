@@ -52,12 +52,13 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
   if (!personalInfo) {
     return (
       <MainLayout>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
+        <div className="pt-16 md:pt-24 lg:pt-32">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black max-w-4xl">
             <span className="text-accent-600">Giới</span><br />
             Thiệu
@@ -136,18 +137,20 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
             ))}
           </ul>
         </div>
+        </div>
       </MainLayout>
     )
   }
 
   return (
     <MainLayout>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-16"
-      >
+      <div className="pt-16 md:pt-24 lg:pt-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
         <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
           <span className="text-accent-600">Giới</span> Thiệu
         </h1>
@@ -216,6 +219,7 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </MainLayout>
   )

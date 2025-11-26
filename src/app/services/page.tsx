@@ -36,12 +36,13 @@ export default function ServicesPage() {
 
   return (
     <MainLayout>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-12"
-      >
+      <div className="pt-16 md:pt-24 lg:pt-32">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
         <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
           <span className="text-accent-600">Dịch</span> Vụ
         </h1>
@@ -126,6 +127,7 @@ export default function ServicesPage() {
           </div>
         </div>
       )}
+      </div>
     </MainLayout>
   )
 }
