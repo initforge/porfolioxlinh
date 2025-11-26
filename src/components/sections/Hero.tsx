@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative py-8 md:py-12 lg:py-16"
+      className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white"
     >
       {/* Three.js Background - Lazy loaded */}
       {showThreeJS && (
@@ -73,12 +73,12 @@ export default function Hero() {
           
           {/* Description - Reduced size */}
           <TextReveal delay={0.3}>
-            <div className="space-y-2 mb-10">
-              <p className="text-[18px] md:text-[20px] text-black leading-[1.6]">
-                Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn.
+            <div className="space-y-3 mb-10">
+              <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7]">
+                Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn. Mỗi dự án là một cơ hội để đẩy ranh giới của sự sáng tạo.
               </p>
-              <p className="text-[18px] md:text-[20px] text-black leading-[1.6]">
-                Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.
+              <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7]">
+                Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt, với sự chú ý đến từng chi tiết và cam kết về chất lượng.
               </p>
             </div>
           </TextReveal>

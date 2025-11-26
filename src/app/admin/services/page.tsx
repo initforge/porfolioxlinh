@@ -69,13 +69,13 @@ export default function AdminServicesPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-8">Services</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg border-2 border-gray-200 p-6">
+            <div className="bg-white rounded-lg border-2 border-black p-6">
               <h2 className="text-2xl font-bold mb-4">
                 {editing ? 'Edit Service' : 'Add New Service'}
               </h2>
@@ -94,7 +94,7 @@ export default function AdminServicesPage() {
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-colors"
                     required
                   />
                 </div>
@@ -134,30 +134,30 @@ export default function AdminServicesPage() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden">
-              <div className="p-6 border-b border-gray-200">
+            <div className="bg-white rounded-lg border-2 border-black overflow-hidden">
+              <div className="p-6 border-b-2 border-black">
                 <h2 className="text-2xl font-bold">All Services</h2>
               </div>
-              <div className="divide-y divide-gray-200">
+              <div className="divide-y divide-gray-300">
                 {services.map((service) => (
-                  <div key={service.id} className="p-6 flex items-center justify-between">
+                  <div key={service.id} className="p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4">
                       {service.icon && <span className="text-2xl">{service.icon}</span>}
                       <div>
-                        <div className="font-medium">{service.name}</div>
-                        <div className="text-sm text-gray-500">{service.description}</div>
+                        <div className="font-medium text-black">{service.name}</div>
+                        <div className="text-sm text-gray-600">{service.description}</div>
                       </div>
                     </div>
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleEdit(service)}
-                        className="text-gray-600 hover:text-black"
+                        className="text-black hover:text-gray-600"
                       >
                         <Edit size={18} />
                       </button>
                       <button
                         onClick={() => handleDelete(service.id)}
-                        className="text-red-600 hover:text-red-800"
+                        className="text-black hover:text-red-600"
                       >
                         <Trash2 size={18} />
                       </button>

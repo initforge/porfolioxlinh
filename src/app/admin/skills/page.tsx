@@ -71,13 +71,13 @@ export default function AdminSkillsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-8">Skills</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg border-2 border-gray-200 p-6">
+            <div className="bg-white rounded-lg border-2 border-black p-6">
               <h2 className="text-2xl font-bold mb-4">
                 {editing ? 'Edit Skill' : 'Add New Skill'}
               </h2>
@@ -97,7 +97,7 @@ export default function AdminSkillsPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, category: e.target.value as Skill['category'] })
                     }
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-colors"
                   >
                     <option value="frontend">Frontend</option>
                     <option value="backend">Backend</option>
@@ -141,30 +141,30 @@ export default function AdminSkillsPage() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden">
-              <div className="p-6 border-b border-gray-200">
+            <div className="bg-white rounded-lg border-2 border-black overflow-hidden">
+              <div className="p-6 border-b-2 border-black">
                 <h2 className="text-2xl font-bold">All Skills</h2>
               </div>
-              <div className="divide-y divide-gray-200">
+              <div className="divide-y divide-gray-300">
                 {skills.map((skill) => (
-                  <div key={skill.id} className="p-6 flex items-center justify-between">
+                  <div key={skill.id} className="p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4">
                       {skill.icon && <span className="text-2xl">{skill.icon}</span>}
                       <div>
-                        <div className="font-medium">{skill.name}</div>
-                        <div className="text-sm text-gray-500 capitalize">{skill.category}</div>
+                        <div className="font-medium text-black">{skill.name}</div>
+                        <div className="text-sm text-gray-600 capitalize">{skill.category}</div>
                       </div>
                     </div>
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleEdit(skill)}
-                        className="text-gray-600 hover:text-black"
+                        className="text-black hover:text-gray-600"
                       >
                         <Edit size={18} />
                       </button>
                       <button
                         onClick={() => handleDelete(skill.id)}
-                        className="text-red-600 hover:text-red-800"
+                        className="text-black hover:text-red-600"
                       >
                         <Trash2 size={18} />
                       </button>

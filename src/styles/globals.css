@@ -15,6 +15,11 @@
   --gray-700: #404040;
   --gray-800: #262626;
   --gray-900: #171717;
+  
+  /* Subtle gradients for depth */
+  --gradient-gray-light: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
+  --gradient-gray-medium: linear-gradient(180deg, #F5F5F5 0%, #E5E5E5 100%);
+  --gradient-gray-dark: linear-gradient(180deg, #E5E5E5 0%, #D4D4D4 100%);
 }
 
 * {
@@ -46,18 +51,37 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: clamp(2.5rem, 8vw, 7rem);
+  letter-spacing: -0.03em;
 }
 
 h2 {
   font-size: clamp(2rem, 6vw, 5rem);
+  letter-spacing: -0.025em;
 }
 
 h3 {
   font-size: clamp(1.5rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
 }
 
 p {
   line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* Enhanced text hierarchy */
+.text-large {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.text-xl {
+  line-height: 1.7;
+}
+
+.text-2xl {
+  line-height: 1.6;
 }
 
 /* Custom scrollbar */
@@ -179,6 +203,54 @@ p {
 ::-moz-selection {
   background: var(--black);
   color: var(--white);
+}
+
+/* Decorative elements */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gray-300), transparent);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.decorative-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--black);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Subtle background patterns */
+.bg-pattern {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(0, 0, 0, 0.02) 10px,
+      rgba(0, 0, 0, 0.02) 20px
+    );
+}
+
+/* Enhanced spacing utilities */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
 
 /* Reduce motion for accessibility */

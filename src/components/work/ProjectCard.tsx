@@ -22,7 +22,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       className="group project-card"
     >
       <Link href={`/projects/${project.slug}`}>
-        <div className="bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-black transition-all duration-300 cursor-pointer h-full flex flex-col relative group">
+        <div className="bg-white border-2 border-gray-300 rounded-xl overflow-hidden hover:border-black hover:bg-gray-50 transition-all duration-300 cursor-pointer h-full flex flex-col relative group">
           {project.thumbnail && (
             <div className="relative w-full h-64 md:h-80 overflow-hidden">
               <Image

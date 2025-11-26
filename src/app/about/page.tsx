@@ -36,10 +36,6 @@ export default function AboutPage() {
     }
   }, [skills])
 
-  if (!personalInfo) {
-    return <LoadingSpinner />
-  }
-
   const skillsByCategory = skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
       acc[skill.category] = []
@@ -48,15 +44,25 @@ export default function AboutPage() {
     return acc
   }, {} as Record<string, Skill[]>)
 
+  if (!personalInfo) {
+    return (
+      <MainLayout>
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <LoadingSpinner />
+        </div>
+      </MainLayout>
+    )
+  }
+
   return (
     <MainLayout>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mb-12"
+        className="mb-16"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-black">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black">
           Giới Thiệu
         </h1>
       </motion.div>
@@ -83,13 +89,13 @@ export default function AboutPage() {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Kỹ năng</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
-              <div key={category} className="bg-white border-2 border-black rounded-xl p-6">
+              <div key={category} className="bg-white border-2 border-gray-300 rounded-xl p-6 hover:border-black transition-colors duration-300">
                 <h3 className="text-xl font-bold mb-4 capitalize text-black">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {categorySkills.map((skill) => (
                     <div
                       key={skill.id}
-                      className="skill-item bg-gray-100 px-3 py-1.5 rounded-full text-sm font-medium text-gray-700"
+                      className="skill-item bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-full text-sm font-medium text-gray-700 hover:text-black transition-colors duration-300"
                     >
                       {skill.icon && <span className="mr-2">{skill.icon}</span>}
                       {skill.name}
@@ -103,7 +109,7 @@ export default function AboutPage() {
       )}
 
       {/* Why Work With Me */}
-      <div className="bg-white border-2 border-black p-8 md:p-10 rounded-xl">
+      <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 p-8 md:p-10 rounded-xl hover:border-black transition-colors duration-300">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Tại sao nên làm việc với tôi</h2>
         <ul className="space-y-4">
           {[

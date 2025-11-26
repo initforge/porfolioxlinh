@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Container from '@/components/layout/Container'
+import Button from '@/components/ui/Button'
 import { getSkills } from '@/lib/firebase/firestore'
 import { Skill } from '@/types/skill'
 import { staggerReveal } from '@/lib/three/animations'
@@ -31,7 +32,9 @@ export default function Tools() {
   if (skills.length === 0) return null
 
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative">
+      {/* Decorative line */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -42,8 +45,8 @@ export default function Tools() {
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Công cụ & Kỹ năng
         </h2>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed">
-          Những công nghệ và công cụ tôi sử dụng để tạo ra các sản phẩm chất lượng cao
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-8">
+          Những công nghệ và công cụ tôi sử dụng để tạo ra các sản phẩm chất lượng cao. Từ frontend đến backend, từ design đến deployment - tôi luôn cập nhật và làm chủ các công nghệ mới nhất.
         </p>
       </motion.div>
 
@@ -56,7 +59,7 @@ export default function Tools() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.05 }}
             whileHover={{ y: -4, scale: 1.05 }}
-            className="tool-item bg-white border-2 border-gray-200 rounded-lg p-4 text-center hover:border-black transition-all duration-300 cursor-pointer group"
+            className="tool-item bg-white border-2 border-gray-300 rounded-lg p-4 text-center hover:border-black hover:bg-gray-50 transition-all duration-300 cursor-pointer group"
           >
             {skill.icon && (
               <div className="text-3xl md:text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -69,6 +72,24 @@ export default function Tools() {
           </motion.div>
         ))}
       </div>
+      
+      {/* CTA Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="mt-16 text-center"
+      >
+        <Button
+          variant="outline"
+          onClick={() => window.location.href = '/services'}
+          size="lg"
+          className="text-lg px-8 py-4"
+        >
+          Xem dịch vụ của tôi →
+        </Button>
+      </motion.div>
     </section>
   )
 }

@@ -69,13 +69,13 @@ export default function AdminSocialPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-8">Social Links</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg border-2 border-gray-200 p-6">
+            <div className="bg-white rounded-lg border-2 border-black p-6">
               <h2 className="text-2xl font-bold mb-4">
                 {editing ? 'Edit Link' : 'Add New Link'}
               </h2>
@@ -126,22 +126,22 @@ export default function AdminSocialPage() {
           </div>
 
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden">
-              <div className="p-6 border-b border-gray-200">
+            <div className="bg-white rounded-lg border-2 border-black overflow-hidden">
+              <div className="p-6 border-b-2 border-black">
                 <h2 className="text-2xl font-bold">All Links</h2>
               </div>
-              <div className="divide-y divide-gray-200">
+              <div className="divide-y divide-gray-300">
                 {links.map((link) => (
-                  <div key={link.id} className="p-6 flex items-center justify-between">
+                  <div key={link.id} className="p-6 flex items-center justify-between hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4">
                       {link.icon && <span className="text-2xl">{link.icon}</span>}
                       <div>
-                        <div className="font-medium">{link.displayName || link.platform}</div>
+                        <div className="font-medium text-black">{link.displayName || link.platform}</div>
                         <a
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm text-gray-500 hover:text-black"
+                          className="text-sm text-gray-600 hover:text-black"
                         >
                           {link.url}
                         </a>
@@ -150,13 +150,13 @@ export default function AdminSocialPage() {
                     <div className="flex gap-2">
                       <button
                         onClick={() => handleEdit(link)}
-                        className="text-gray-600 hover:text-black"
+                        className="text-black hover:text-gray-600"
                       >
                         <Edit size={18} />
                       </button>
                       <button
                         onClick={() => handleDelete(link.id)}
-                        className="text-red-600 hover:text-red-800"
+                        className="text-black hover:text-red-600"
                       >
                         <Trash2 size={18} />
                       </button>

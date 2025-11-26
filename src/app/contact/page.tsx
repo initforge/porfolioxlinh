@@ -93,7 +93,7 @@ export default function ContactPage() {
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-black mb-2">
                       Tin nhắn
                     </label>
                     <textarea

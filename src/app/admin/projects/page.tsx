@@ -41,16 +41,16 @@ export default function AdminProjectsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 pt-20">
+      <div className="min-h-screen bg-white pt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <p>Loading...</p>
+          <p className="text-black">Loading...</p>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-4xl font-bold">Projects</h1>
@@ -60,20 +60,20 @@ export default function AdminProjectsPage() {
           </Button>
         </div>
 
-        <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-lg border-2 border-black overflow-hidden">
           <table className="w-full">
-            <thead className="bg-gray-50">
+            <thead className="bg-gray-100">
               <tr>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase">
                   Title
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase">
                   Category
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase">
                   Year
                 </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                <th className="px-6 py-3 text-left text-xs font-medium text-black uppercase">
                   Featured
                 </th>
                 <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">
@@ -81,24 +81,24 @@ export default function AdminProjectsPage() {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-200">
+            <tbody className="divide-y divide-gray-300">
               {projects.map((project) => (
                 <tr key={project.id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="font-medium">{project.title}</div>
-                    <div className="text-sm text-gray-500">{project.slug}</div>
+                    <div className="text-sm text-gray-600">{project.slug}</div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap capitalize">
+                  <td className="px-6 py-4 whitespace-nowrap capitalize text-black">
                     {project.category}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">{project.year}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-black">{project.year}</td>
                   <td className="px-6 py-4 whitespace-nowrap">
                     {project.featured ? (
-                      <span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
+                      <span className="bg-black text-white px-2 py-1 rounded-full text-xs font-medium">
                         Featured
                       </span>
                     ) : (
-                      <span className="text-gray-400">—</span>
+                      <span className="text-gray-500">—</span>
                     )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
@@ -106,19 +106,19 @@ export default function AdminProjectsPage() {
                       <Link
                         href={`/projects/${project.slug}`}
                         target="_blank"
-                        className="text-gray-600 hover:text-black"
+                        className="text-black hover:text-gray-600"
                       >
                         <Eye size={18} />
                       </Link>
                       <button
                         onClick={() => router.push(`/admin/projects/${project.id}`)}
-                        className="text-gray-600 hover:text-black"
+                        className="text-black hover:text-gray-600"
                       >
                         <Edit size={18} />
                       </button>
                       <button
                         onClick={() => handleDelete(project.id)}
-                        className="text-red-600 hover:text-red-800"
+                        className="text-black hover:text-red-600"
                       >
                         <Trash2 size={18} />
                       </button>

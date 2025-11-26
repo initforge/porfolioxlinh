@@ -31,9 +31,9 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold mb-6 text-center">Admin Login</h1>
+    <div className="min-h-screen flex items-center justify-center bg-white">
+      <div className="bg-white p-8 rounded-lg border-2 border-black w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-6 text-center text-black">Admin Login</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
           <Input
             label="Password"

@@ -52,11 +52,11 @@ export default function AdminPersonalPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-8">Personal Information</h1>
 
-        <div className="bg-white rounded-lg border-2 border-gray-200 p-8">
+        <div className="bg-white rounded-lg border-2 border-black p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
               label="Name"
@@ -78,7 +78,7 @@ export default function AdminPersonalPage() {
                 value={formData.intro}
                 onChange={(e) => setFormData({ ...formData, intro: e.target.value })}
                 rows={3}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors"
+                className="w-full px-4 py-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-colors"
                 required
               />
             </div>
@@ -90,7 +90,7 @@ export default function AdminPersonalPage() {
                 value={formData.aboutStory}
                 onChange={(e) => setFormData({ ...formData, aboutStory: e.target.value })}
                 rows={10}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors"
+                className="w-full px-4 py-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-colors"
                 required
               />
             </div>

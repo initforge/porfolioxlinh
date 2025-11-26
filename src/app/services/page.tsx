@@ -70,19 +70,33 @@ export default function ServicesPage() {
 
       {/* Process */}
       <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black">Quy trình làm việc</h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Quy trình làm việc</h2>
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
+          Một quy trình được tinh chỉnh qua nhiều dự án, đảm bảo mọi bước đều được thực hiện một cách chuyên nghiệp và hiệu quả.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {[
-            { step: '01', title: 'Khám phá', desc: 'Tìm hiểu nhu cầu và mục tiêu của bạn' },
-            { step: '02', title: 'Lập kế hoạch', desc: 'Tạo roadmap và timeline chi tiết' },
-            { step: '03', title: 'Phát triển', desc: 'Xây dựng giải pháp của bạn' },
-            { step: '04', title: 'Giao hàng', desc: 'Launch và hỗ trợ' },
+            { step: '01', title: 'Khám phá & Phân tích', desc: 'Tìm hiểu sâu về nhu cầu, mục tiêu và đối tượng khách hàng của bạn. Phân tích thị trường và đối thủ cạnh tranh để tạo ra giải pháp tối ưu nhất.', icon: '🔍' },
+            { step: '02', title: 'Lập kế hoạch & Thiết kế', desc: 'Xây dựng roadmap chi tiết, wireframes và mockups. Tạo ra một thiết kế không chỉ đẹp mắt mà còn tối ưu cho trải nghiệm người dùng.', icon: '📐' },
+            { step: '03', title: 'Phát triển & Tối ưu', desc: 'Xây dựng sản phẩm với code chất lượng cao, tối ưu hiệu suất và đảm bảo responsive trên mọi thiết bị. Testing kỹ lưỡng ở mọi giai đoạn.', icon: '⚡' },
+            { step: '04', title: 'Launch & Hỗ trợ', desc: 'Triển khai sản phẩm một cách mượt mà và cung cấp hỗ trợ liên tục. Bảo trì, cập nhật và cải thiện dựa trên phản hồi của người dùng.', icon: '🚀' },
           ].map((item, index) => (
-            <div key={index} className="bg-white border-2 border-black rounded-xl p-6 text-center">
-              <div className="text-5xl md:text-6xl font-bold text-gray-200 mb-4">{item.step}</div>
-              <h3 className="text-xl font-bold mb-2 text-black">{item.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
-            </div>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-white border-2 border-gray-300 rounded-xl p-6 md:p-8 text-center hover:border-black hover:bg-gray-50 transition-all duration-300 relative group"
+            >
+              <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
+                {item.step}
+              </div>
+              <div className="text-4xl mb-4 relative z-10">{item.icon}</div>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 text-black relative z-10">{item.title}</h3>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed relative z-10">{item.desc}</p>
+            </motion.div>
           ))}
         </div>
       </div>

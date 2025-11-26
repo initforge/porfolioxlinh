@@ -13,8 +13,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <div className="min-h-screen bg-white text-black">
       <IconNavigation />
       
-      <div className="max-w-[1400px] mx-auto px-8 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left Sidebar - Profile Card */}
           <aside className="lg:col-span-3 flex justify-center">
             <ProfileCard />

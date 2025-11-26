@@ -44,9 +44,22 @@ export default function ProjectsPage() {
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Tất cả Dự án
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
-          Tuyển tập các dự án gần đây của tôi
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-8">
+          Tuyển tập các dự án gần đây của tôi. Mỗi dự án là một minh chứng cho sự đam mê, kỹ năng và cam kết tạo ra những sản phẩm xuất sắc.
         </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12"
+        >
+          <a
+            href="/contact"
+            className="inline-block px-6 py-3 border-2 border-black text-black rounded-lg font-medium hover:bg-black hover:text-white transition-colors duration-300"
+          >
+            Có dự án muốn làm? Liên hệ ngay →
+          </a>
+        </motion.div>
       </motion.div>
 
       {loading ? (

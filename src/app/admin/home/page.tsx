@@ -63,11 +63,11 @@ export default function AdminHomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-20">
+    <div className="min-h-screen bg-white pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold mb-8">Home Page Configuration</h1>
 
-        <div className="bg-white rounded-lg border-2 border-gray-200 p-8">
+        <div className="bg-white rounded-lg border-2 border-black p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">Hero Content</h2>
@@ -105,7 +105,7 @@ export default function AdminHomePage() {
                       })
                     }
                     rows={3}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors"
+                    className="w-full px-4 py-3 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-black transition-colors"
                   />
                 </div>
               </div>
@@ -120,7 +120,7 @@ export default function AdminHomePage() {
                 {projects.map((project) => (
                   <label
                     key={project.id}
-                    className="flex items-center gap-3 p-3 border-2 border-gray-200 rounded-lg hover:border-black transition-colors cursor-pointer"
+                    className="flex items-center gap-3 p-3 border-2 border-black rounded-lg hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <input
                       type="checkbox"
