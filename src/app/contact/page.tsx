@@ -60,7 +60,8 @@ export default function ContactPage() {
           className="mb-12"
         >
         <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
-          Hãy Tạo <span className="text-accent-600">Điều Gì Đó</span> Tuyệt Vời
+          Hãy Tạo <span className="text-accent-600">Điều Gì Đó</span><br />
+          Tuyệt Vời
         </h1>
         <div className="space-y-3 mb-10 max-w-5xl">
           <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7]">

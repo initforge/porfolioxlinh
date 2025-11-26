@@ -59,9 +59,8 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
             transition={{ duration: 0.6 }}
             className="mb-16"
           >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black max-w-4xl">
-            <span className="text-accent-600">Giới</span><br />
-            Thiệu
+          <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+            <span className="text-accent-600">Giới Thiệu</span>
           </h1>
         </motion.div>
 
@@ -152,7 +151,7 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
           className="mb-16"
         >
         <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
-          <span className="text-accent-600">Giới</span> Thiệu
+          <span className="text-accent-600">Giới Thiệu</span>
         </h1>
       </motion.div>
 
