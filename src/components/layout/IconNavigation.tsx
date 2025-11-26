@@ -17,8 +17,8 @@ export default function IconNavigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="flex items-center gap-2 bg-white/95 backdrop-blur-md rounded-full px-3 py-2 border-2 border-black shadow-lg">
+    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="flex items-center gap-1 bg-white rounded-full px-2 py-1.5 border-2 border-black shadow-md">
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = pathname === item.href
@@ -31,23 +31,16 @@ export default function IconNavigation() {
               aria-label={item.label}
             >
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`p-2.5 rounded-lg transition-colors ${
+                className={`p-2 rounded-lg transition-all ${
                   isActive
                     ? 'bg-black text-white'
-                    : 'text-gray-600 hover:text-black hover:bg-gray-100'
+                    : 'text-gray-600 hover:text-black'
                 }`}
               >
                 <Icon size={18} />
               </motion.div>
-              
-              {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                <div className="bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap">
-                  {item.label}
-                </div>
-              </div>
             </Link>
           )
         })}
