@@ -28,7 +28,7 @@ export default function ProfileCard() {
   }, [])
 
   useEffect(() => {
-    // Dynamic sticky center positioning - Card luôn ở giữa viewport theo chiều dọc
+    // Dynamic sticky center positioning - Card luôn ở giữa viewport theo chiều dọc khi sticky
     const updateStickyPosition = () => {
       if (cardRef.current) {
         const card = cardRef.current
@@ -44,20 +44,17 @@ export default function ProfileCard() {
     }
 
     // Update ngay khi component mount và khi data thay đổi
-    updateStickyPosition()
+    // Sử dụng setTimeout để đảm bảo DOM đã render xong
+    const timer = setTimeout(() => {
+      updateStickyPosition()
+    }, 100)
     
     // Update khi resize window
     window.addEventListener('resize', updateStickyPosition)
     
-    // Update khi scroll để đảm bảo luôn ở giữa
-    const handleScroll = () => {
-      updateStickyPosition()
-    }
-    window.addEventListener('scroll', handleScroll)
-    
     return () => {
+      clearTimeout(timer)
       window.removeEventListener('resize', updateStickyPosition)
-      window.removeEventListener('scroll', handleScroll)
     }
   }, [personalInfo, socialLinks])
 
@@ -76,8 +73,7 @@ export default function ProfileCard() {
       ref={cardRef}
       className="bg-white border-2 border-black rounded-2xl p-10 h-fit sticky mx-auto max-w-[320px]"
       style={{
-        top: 'var(--sticky-top, 50%)',
-        transform: 'translateY(-50%)',
+        top: 'var(--sticky-top, calc(50vh - 50%))',
         marginLeft: '40px',
       }}
     >
