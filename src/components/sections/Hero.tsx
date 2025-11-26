@@ -48,7 +48,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative py-12 md:py-20"
+      className="relative py-12 md:py-16"
     >
       {/* Three.js Background - Lazy loaded */}
       {showThreeJS && (
@@ -63,47 +63,23 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div style={{ opacity, scale }} className="relative z-10">
-        <div className="max-w-4xl">
-          {/* Headline */}
-          <TextReveal delay={0.2} className="mb-8">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-black">
-              Biến Ý Tưởng Của Bạn<br />Thành Hiện Thực
+        <div className="max-w-5xl">
+          {/* Headline - Large, split into 3 lines */}
+          <TextReveal delay={0.2}>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-10 leading-[1.1] text-black">
+              Biến Ý Tưởng<br />Của Bạn<br />Thành Hiện Thực
             </h1>
           </TextReveal>
           
+          {/* Description - 2 lines, simple text, no buttons */}
           <TextReveal delay={0.3}>
-            <div className="space-y-4 mb-10">
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+            <div className="space-y-4">
+              <p className="text-xl md:text-2xl text-black leading-relaxed">
                 Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn.
               </p>
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+              <p className="text-xl md:text-2xl text-black leading-relaxed">
                 Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.
               </p>
-            </div>
-          </TextReveal>
-
-          {/* CTA Buttons */}
-          <TextReveal delay={0.4}>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                onClick={() => {
-                  window.location.href = '/contact'
-                }}
-                size="lg"
-                className="text-lg px-8 py-4"
-              >
-                Liên hệ
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => {
-                  window.location.href = '/projects'
-                }}
-                className="text-lg px-8 py-4"
-              >
-                Xem dự án →
-              </Button>
             </div>
           </TextReveal>
         </div>

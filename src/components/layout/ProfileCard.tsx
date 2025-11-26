@@ -51,8 +51,8 @@ export default function ProfileCard() {
 
   return (
     <div className="bg-white border-2 border-black rounded-2xl p-6 md:p-8 h-fit sticky top-8">
-      {/* Navigation Icons - Inside Profile Card */}
-      <div className="flex items-center justify-center gap-2 mb-8 pb-6 border-b-2 border-black">
+      {/* Navigation Icons - Top of card */}
+      <div className="flex items-center justify-center gap-2 mb-6 pb-6 border-b-2 border-black">
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = pathname === item.href
@@ -65,12 +65,12 @@ export default function ProfileCard() {
               aria-label={item.label}
             >
               <motion.div
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`p-2.5 rounded-lg transition-colors ${
+                className={`p-2.5 transition-colors ${
                   isActive
-                    ? 'bg-black text-white'
-                    : 'text-gray-600 hover:text-black hover:bg-gray-100'
+                    ? 'bg-black text-white rounded-lg'
+                    : 'text-gray-600 hover:text-black hover:bg-gray-100 rounded-lg'
                 }`}
               >
                 <Icon size={18} />
@@ -79,55 +79,16 @@ export default function ProfileCard() {
           )
         })}
       </div>
-
-      {/* Avatar */}
-      {personalInfo?.avatar && (
-        <div className="relative w-32 h-32 md:w-36 md:h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-black">
-          <Image
-            src={personalInfo.avatar}
-            alt={personalInfo.name || 'Profile'}
-            fill
-            className="object-cover"
-          />
-        </div>
-      )}
       
-      {/* Name & Info */}
-      <div className="text-center mb-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+      {/* Name & Info - Center aligned, no avatar */}
+      <div className="text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-black mb-3">
           {personalInfo?.name || 'Tên của bạn'}
         </h2>
-        <p className="text-gray-700 text-base md:text-lg mb-2 font-medium">
+        <p className="text-lg md:text-xl text-black">
           {personalInfo?.tagline || 'Freelance Web Developer'}
         </p>
-        {personalInfo?.email && (
-          <p className="text-gray-500 text-sm">
-            {personalInfo.email}
-          </p>
-        )}
       </div>
-
-      {/* Social Links */}
-      {socialLinks.length > 0 && (
-        <div className="flex justify-center gap-4 pt-6 border-t-2 border-black">
-          {socialLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:text-black transition-colors"
-              aria-label={link.platform}
-            >
-              {link.icon ? (
-                <span className="text-xl">{link.icon}</span>
-              ) : (
-                getIcon(link.platform)
-              )}
-            </a>
-          ))}
-        </div>
-      )}
     </div>
   )
 }
