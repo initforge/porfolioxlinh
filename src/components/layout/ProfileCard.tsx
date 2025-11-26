@@ -28,21 +28,37 @@ export default function ProfileCard() {
   }, [])
 
   useEffect(() => {
-    // Dynamic sticky center positioning
+    // Dynamic sticky center positioning - Card luôn ở giữa viewport theo chiều dọc
     const updateStickyPosition = () => {
       if (cardRef.current) {
         const card = cardRef.current
         const cardHeight = card.offsetHeight
         const viewportHeight = window.innerHeight
-        const topOffset = (viewportHeight - cardHeight) / 2
+        
+        // Tính toán để card ở giữa: khoảng cách từ top = (viewport height - card height) / 2
+        // Đảm bảo khoảng cách trên và dưới card bằng nhau
+        const topOffset = Math.max(0, (viewportHeight - cardHeight) / 2)
         
         card.style.setProperty('--sticky-top', `${topOffset}px`)
       }
     }
 
+    // Update ngay khi component mount và khi data thay đổi
     updateStickyPosition()
+    
+    // Update khi resize window
     window.addEventListener('resize', updateStickyPosition)
-    return () => window.removeEventListener('resize', updateStickyPosition)
+    
+    // Update khi scroll để đảm bảo luôn ở giữa
+    const handleScroll = () => {
+      updateStickyPosition()
+    }
+    window.addEventListener('scroll', handleScroll)
+    
+    return () => {
+      window.removeEventListener('resize', updateStickyPosition)
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [personalInfo, socialLinks])
 
   const getIcon = (platform: string) => {
@@ -62,8 +78,7 @@ export default function ProfileCard() {
       style={{
         top: 'var(--sticky-top, 50%)',
         transform: 'translateY(-50%)',
-        marginLeft: '80px',
-        marginRight: '80px',
+        marginLeft: '40px',
       }}
     >
       {/* Avatar - Always show, even if no image */}
