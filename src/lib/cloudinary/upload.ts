@@ -39,10 +39,3 @@ export async function deleteImage(publicId: string): Promise<void> {
   await cloudinary.uploader.destroy(publicId)
 }
 
-export function getImageUrl(publicId: string, transformations?: Record<string, any>): string {
-  return cloudinary.url(publicId, {
-    secure: true,
-    ...transformations,
-  })
-}
-
