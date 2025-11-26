@@ -63,21 +63,21 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div style={{ opacity, scale }} className="relative z-10">
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           {/* Headline - Large, split into 4 lines like reference */}
           <TextReveal delay={0.2}>
-            <h1 className="text-7xl md:text-8xl lg:text-9xl font-bold mb-10 leading-[1.1] text-black tracking-tight">
+            <h1 className="text-[96px] font-bold mb-12 leading-[1.05] text-black tracking-[-0.02em]">
               Biến Ý Tưởng<br />Của Bạn<br />Thành Hiện<br />Thực
             </h1>
           </TextReveal>
           
           {/* Description - 2 lines, simple text */}
           <TextReveal delay={0.3}>
-            <div className="space-y-2">
-              <p className="text-xl md:text-2xl text-black leading-relaxed">
+            <div className="space-y-1">
+              <p className="text-[22px] text-black leading-[1.6]">
                 Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn.
               </p>
-              <p className="text-xl md:text-2xl text-black leading-relaxed">
+              <p className="text-[22px] text-black leading-[1.6]">
                 Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.
               </p>
             </div>

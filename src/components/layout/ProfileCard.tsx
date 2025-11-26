@@ -37,9 +37,9 @@ export default function ProfileCard() {
   }
 
   return (
-    <div className="bg-white border-2 border-black rounded-2xl p-8 h-fit sticky top-8">
+    <div className="bg-white border-2 border-black rounded-2xl p-10 h-fit sticky top-8">
       {/* Avatar - Always show, even if no image */}
-      <div className="relative w-36 h-36 mx-auto mb-8 rounded-full overflow-hidden border-4 border-black bg-gray-100">
+      <div className="relative w-[160px] h-[160px] mx-auto mb-10 rounded-full overflow-hidden border-4 border-black bg-gray-100">
         {personalInfo?.avatar ? (
           <Image
             src={personalInfo.avatar}
@@ -48,22 +48,22 @@ export default function ProfileCard() {
             className="object-cover"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center text-4xl text-gray-400">
+          <div className="w-full h-full flex items-center justify-center text-5xl text-gray-400 font-bold">
             {personalInfo?.name?.charAt(0) || '?'}
           </div>
         )}
       </div>
       
       {/* Name & Info */}
-      <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-black mb-3 leading-tight">
+      <div className="text-center mb-10">
+        <h2 className="text-[36px] font-bold text-black mb-4 leading-[1.1] tracking-tight">
           {personalInfo?.name || 'Tên của bạn'}
         </h2>
-        <p className="text-lg text-black mb-2">
+        <p className="text-[18px] text-black mb-3 leading-relaxed">
           {personalInfo?.tagline || 'Freelance Web Developer'}
         </p>
         {personalInfo?.email && (
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-[14px] text-gray-600 leading-relaxed">
             {personalInfo.email}
           </p>
         )}
@@ -71,7 +71,7 @@ export default function ProfileCard() {
 
       {/* Social Links */}
       {socialLinks.length > 0 && (
-        <div className="flex justify-center gap-5 pt-6 border-t-2 border-black">
+        <div className="flex justify-center gap-6 pt-8 border-t-2 border-black">
           {socialLinks.map((link) => (
             <a
               key={link.id}
@@ -82,7 +82,7 @@ export default function ProfileCard() {
               aria-label={link.platform}
             >
               {link.icon ? (
-                <span className="text-2xl">{link.icon}</span>
+                <span className="text-[24px]">{link.icon}</span>
               ) : (
                 getIcon(link.platform)
               )}

@@ -17,8 +17,8 @@ export default function IconNavigation() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50">
-      <div className="flex items-center gap-1 bg-white rounded-full px-2 py-1.5 border-2 border-black shadow-md">
+    <nav className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50">
+      <div className="flex items-center gap-0.5 bg-white rounded-full px-1.5 py-1 border-2 border-black">
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = pathname === item.href
@@ -33,13 +33,13 @@ export default function IconNavigation() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className={`p-2 rounded-lg transition-all ${
+                className={`p-1.5 rounded-md transition-all ${
                   isActive
                     ? 'bg-black text-white'
                     : 'text-gray-600 hover:text-black'
                 }`}
               >
-                <Icon size={18} />
+                <Icon size={16} />
               </motion.div>
             </Link>
           )
