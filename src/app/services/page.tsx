@@ -42,13 +42,14 @@ export default function ServicesPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black max-w-4xl">
-          <span className="text-accent-600">Dịch</span><br />
-          Vụ
+        <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+          <span className="text-accent-600">Dịch</span> Vụ
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
-          Những gì tôi có thể giúp bạn
-        </p>
+        <div className="space-y-3 mb-10 max-w-5xl">
+          <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7]">
+            Những gì tôi có thể giúp bạn
+          </p>
+        </div>
       </motion.div>
 
       {/* Services List */}
@@ -71,13 +72,14 @@ export default function ServicesPage() {
 
       {/* Process */}
       <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
-          <span className="text-accent-600">Quy trình</span><br />
-          làm việc
+        <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+          Quy trình <span className="text-accent-600">làm việc</span>
         </h2>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
-          Một quy trình được <span className="text-accent-600 font-semibold">tinh chỉnh</span> qua nhiều dự án, đảm bảo mọi bước đều được thực hiện một cách <span className="text-accent-600 font-semibold">chuyên nghiệp</span> và <span className="text-accent-600 font-semibold">hiệu quả</span>.
-        </p>
+        <div className="space-y-3 mb-10 max-w-5xl">
+          <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7]">
+            Một quy trình được tinh chỉnh qua nhiều dự án, đảm bảo mọi bước đều được thực hiện một cách chuyên nghiệp và hiệu quả.
+          </p>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {[
             { step: '01', title: 'Khám phá & Phân tích', desc: 'Tìm hiểu sâu về nhu cầu, mục tiêu và đối tượng khách hàng của bạn. Phân tích thị trường và đối thủ cạnh tranh để tạo ra giải pháp tối ưu nhất.', icon: '🔍' },
@@ -108,9 +110,8 @@ export default function ServicesPage() {
       {/* Tech Stack */}
       {skills.length > 0 && (
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
-            <span className="text-accent-600">Công nghệ</span><br />
-            tôi sử dụng
+          <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+            Công nghệ <span className="text-accent-600">tôi sử dụng</span>
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill) => (

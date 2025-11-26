@@ -67,15 +67,14 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
         {/* Story - Fallback */}
         <div className="mb-16">
           <TextReveal>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
-              <span className="text-accent-600">Câu chuyện</span><br />
-              của tôi
+            <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+              Câu chuyện <span className="text-accent-600">của tôi</span>
             </h2>
           </TextReveal>
           <div className="prose max-w-none">
             {defaultStory.split('\n\n').map((paragraph, index) => (
               <TextReveal key={index} delay={index * 0.1}>
-                <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6 max-w-4xl">
+                <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7] mb-6 max-w-5xl">
                   {paragraph}
                 </p>
               </TextReveal>
@@ -85,7 +84,7 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
 
         {/* Skills - Fallback */}
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
+          <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
             <span className="text-accent-600">Kỹ năng</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -120,7 +119,7 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
 
         {/* Why Work With Me */}
         <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 p-8 md:p-10 rounded-xl hover:border-accent-400 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black max-w-4xl">
+          <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
             Tại sao nên <span className="text-accent-600">làm việc</span> với tôi
           </h2>
           <ul className="space-y-4">
@@ -149,24 +148,22 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
         transition={{ duration: 0.6 }}
         className="mb-16"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-black max-w-4xl">
-          <span className="text-accent-600">Giới</span><br />
-          Thiệu
+        <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+          <span className="text-accent-600">Giới</span> Thiệu
         </h1>
       </motion.div>
 
       {/* Story */}
       <div className="mb-16">
         <TextReveal>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
-            <span className="text-accent-600">Câu chuyện</span><br />
-            của tôi
+          <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+            Câu chuyện <span className="text-accent-600">của tôi</span>
           </h2>
         </TextReveal>
         <div className="prose max-w-none">
           {(personalInfo.aboutStory || defaultStory).split('\n\n').map((paragraph, index) => (
             <TextReveal key={index} delay={index * 0.1}>
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6 max-w-4xl">
+              <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7] mb-6 max-w-5xl">
                 {paragraph}
               </p>
             </TextReveal>
@@ -203,7 +200,7 @@ Tôi chuyên về việc xây dựng các website responsive, tối ưu hiệu s
 
       {/* Why Work With Me */}
       <div className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-300 p-8 md:p-10 rounded-xl hover:border-accent-400 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black max-w-4xl">
+        <h2 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
           Tại sao nên <span className="text-accent-600">làm việc</span> với tôi
         </h2>
         <ul className="space-y-4">

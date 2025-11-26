@@ -41,13 +41,14 @@ export default function ProjectsPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black max-w-4xl">
-          <span className="text-accent-600">Tất cả</span><br />
-          Dự án
+        <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em] max-w-5xl">
+          <span className="text-accent-600">Tất cả</span> Dự án
         </h1>
-        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-8">
-          Tuyển tập các dự án gần đây của tôi. Mỗi dự án là một minh chứng cho sự <span className="text-accent-600 font-semibold">đam mê</span>, <span className="text-accent-600 font-semibold">kỹ năng</span> và <span className="text-accent-600 font-semibold">cam kết</span> tạo ra những sản phẩm xuất sắc.
-        </p>
+        <div className="space-y-3 mb-10 max-w-5xl">
+          <p className="text-[18px] md:text-[20px] text-gray-700 leading-[1.7]">
+            Tuyển tập các dự án gần đây của tôi. Mỗi dự án là một minh chứng cho sự đam mê, kỹ năng và cam kết tạo ra những sản phẩm xuất sắc.
+          </p>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
