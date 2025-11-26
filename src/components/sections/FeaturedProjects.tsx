@@ -40,10 +40,10 @@ export default function FeaturedProjects() {
         transition={{ duration: 0.8 }}
         className="mb-12"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Dự án <span className="text-purple-400">Gần Đây</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+          Dự án Gần Đây
         </h2>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
           Một số dự án gần đây thể hiện khả năng phát triển web hiện đại và sáng tạo
         </p>
       </motion.div>

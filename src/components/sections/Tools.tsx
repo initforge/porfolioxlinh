@@ -39,10 +39,10 @@ export default function Tools() {
         transition={{ duration: 0.8 }}
         className="mb-12"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
-          Công cụ & <span className="text-purple-400">Kỹ năng</span>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+          Công cụ & Kỹ năng
         </h2>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
           Những công nghệ và công cụ tôi sử dụng để tạo ra các sản phẩm chất lượng cao
         </p>
       </motion.div>
@@ -56,14 +56,14 @@ export default function Tools() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.05 }}
             whileHover={{ y: -4, scale: 1.05 }}
-            className="tool-item bg-gray-900 border border-gray-800 rounded-lg p-4 text-center hover:border-purple-500/50 transition-all duration-300 cursor-pointer group"
+            className="tool-item bg-white border-2 border-gray-200 rounded-lg p-4 text-center hover:border-black transition-all duration-300 cursor-pointer group"
           >
             {skill.icon && (
               <div className="text-3xl md:text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
                 {skill.icon}
               </div>
             )}
-            <div className="font-medium text-sm text-gray-300 group-hover:text-purple-400 transition-colors duration-300">
+            <div className="font-medium text-sm text-gray-700 group-hover:text-black transition-colors duration-300">
               {skill.name}
             </div>
           </motion.div>

@@ -10,7 +10,7 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-white text-black">
       <IconNavigation />
       
       <div className="container mx-auto px-4 py-8 md:py-12">

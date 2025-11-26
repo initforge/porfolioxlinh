@@ -66,14 +66,13 @@ export default function Hero() {
         <div className="max-w-4xl">
           {/* Headline */}
           <TextReveal delay={0.2} className="mb-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Biến Ý Tưởng Của Bạn{' '}
-              <span className="text-purple-400">Thành Hiện Thực</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-black">
+              Biến Ý Tưởng Của Bạn Thành Hiện Thực
             </h1>
           </TextReveal>
           
           <TextReveal delay={0.3}>
-            <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
               {personalInfo?.intro || 'Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn. Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.'}
             </p>
           </TextReveal>
@@ -86,7 +85,6 @@ export default function Hero() {
                   window.location.href = '/contact'
                 }}
                 size="lg"
-                className="bg-purple-500 hover:bg-purple-600 text-white border-none"
               >
                 Liên hệ
               </Button>
@@ -96,7 +94,6 @@ export default function Hero() {
                 onClick={() => {
                   window.location.href = '/projects'
                 }}
-                className="border-gray-700 text-white hover:bg-gray-800"
               >
                 Xem dự án →
               </Button>

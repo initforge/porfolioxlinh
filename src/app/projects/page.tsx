@@ -41,10 +41,10 @@ export default function ProjectsPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Tất cả <span className="text-purple-400">Dự án</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+          Tất cả Dự án
         </h1>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
           Tuyển tập các dự án gần đây của tôi
         </p>
       </motion.div>
@@ -53,7 +53,7 @@ export default function ProjectsPage() {
         <LoadingSpinner />
       ) : projects.length === 0 ? (
         <div className="text-center py-20">
-          <p className="text-gray-400 text-lg">Không tìm thấy dự án nào.</p>
+          <p className="text-gray-600 text-lg">Không tìm thấy dự án nào.</p>
         </div>
       ) : (
         <ProjectGrid projects={projects} />

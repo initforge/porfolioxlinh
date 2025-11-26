@@ -37,25 +37,23 @@ export default function ProfileCard() {
   }
 
   return (
-    <div className="bg-gray-900 rounded-2xl p-6 md:p-8 h-fit sticky top-8">
+    <div className="bg-white border-2 border-black rounded-2xl p-6 md:p-8 h-fit sticky top-8">
       {personalInfo?.avatar && (
-        <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-purple-500/30">
+        <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-black">
           <Image
             src={personalInfo.avatar}
             alt={personalInfo.name || 'Profile'}
             fill
             className="object-cover"
           />
-          {/* Purple glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-transparent" />
         </div>
       )}
       
       <div className="text-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+        <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">
           {personalInfo?.name || 'Tên của bạn'}
         </h2>
-        <p className="text-gray-400 text-sm md:text-base mb-2">
+        <p className="text-gray-600 text-sm md:text-base mb-2">
           {personalInfo?.tagline || 'Freelance Web Developer'}
         </p>
         {personalInfo?.email && (
@@ -74,7 +72,7 @@ export default function ProfileCard() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-purple-400 transition-colors"
+              className="text-gray-600 hover:text-black transition-colors"
               aria-label={link.platform}
             >
               {link.icon ? (

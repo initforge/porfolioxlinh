@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="vi" className={inter.variable}>
-      <body className="bg-gray-950">
+      <body className="bg-white">
         <ScrollProgress />
         <main>{children}</main>
       </body>

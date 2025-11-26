@@ -58,21 +58,21 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Hãy Tạo <span className="text-purple-400">Điều Gì Đó Tuyệt Vời</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+          Hãy Tạo Điều Gì Đó Tuyệt Vời
         </h1>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
           Có dự án trong đầu? Hãy thảo luận về cách tôi có thể giúp biến ý tưởng của bạn thành hiện thực.
         </p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         {/* Contact Form */}
-        <div className="bg-gray-900 rounded-xl p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Gửi tin nhắn</h2>
+        <div className="bg-white border-2 border-black rounded-xl p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black">Gửi tin nhắn</h2>
               {submitted ? (
-                <div className="bg-green-900/20 border border-green-500/50 rounded-lg p-6">
-                  <p className="text-green-400 font-medium text-lg">
+                <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
+                  <p className="text-green-800 font-medium text-lg">
                     Cảm ơn bạn! Tin nhắn của bạn đã được gửi. Tôi sẽ phản hồi sớm nhất có thể.
                   </p>
                 </div>
@@ -101,14 +101,14 @@ export default function ContactPage() {
                       rows={6}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-black transition-colors"
                     />
                   </div>
                   <Button 
                     type="submit" 
                     disabled={submitting} 
                     size="lg" 
-                    className="w-full bg-purple-500 hover:bg-purple-600 text-white border-none"
+                    className="w-full"
                   >
                     {submitting ? 'Đang gửi...' : 'Gửi tin nhắn'}
                   </Button>
@@ -117,18 +117,18 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Info */}
-        <div className="bg-gray-900 rounded-xl p-6 md:p-8">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white">Thông tin liên hệ</h2>
+        <div className="bg-white border-2 border-black rounded-xl p-6 md:p-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-black">Thông tin liên hệ</h2>
               <div className="space-y-6">
                 {personalInfo?.email && (
                   <div>
                     <div className="flex items-center mb-2">
-                      <Mail size={20} className="mr-2 text-purple-400" />
-                      <span className="font-medium text-white">Email</span>
+                      <Mail size={20} className="mr-2 text-black" />
+                      <span className="font-medium text-black">Email</span>
                     </div>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="text-gray-400 hover:text-purple-400 transition-colors"
+                      className="text-gray-600 hover:text-black transition-colors"
                     >
                       {personalInfo.email}
                     </a>
@@ -142,7 +142,7 @@ export default function ContactPage() {
 
                 {socialLinks.length > 0 && (
                   <div>
-                    <h3 className="font-medium mb-4 text-lg text-white">Liên kết mạng xã hội</h3>
+                    <h3 className="font-medium mb-4 text-lg text-black">Liên kết mạng xã hội</h3>
                     <div className="space-y-3">
                       {socialLinks.map((link) => (
                         <a
@@ -150,7 +150,7 @@ export default function ContactPage() {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center text-gray-400 hover:text-purple-400 transition-colors"
+                          className="flex items-center text-gray-600 hover:text-black transition-colors"
                         >
                           {link.icon && <span className="mr-2">{link.icon}</span>}
                           <span>{link.displayName || link.platform}</span>

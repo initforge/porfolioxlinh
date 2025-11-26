@@ -48,7 +48,7 @@ export default function ProjectDetailPage() {
     return (
       <MainLayout>
         <div className="text-center">
-          <p className="text-gray-400 text-lg">Đang tải dự án...</p>
+          <p className="text-gray-600 text-lg">Đang tải dự án...</p>
         </div>
       </MainLayout>
     )
@@ -58,8 +58,8 @@ export default function ProjectDetailPage() {
     return (
       <MainLayout>
         <div className="text-center">
-          <p className="text-gray-400 text-lg">Không tìm thấy dự án.</p>
-          <Link href="/projects" className="text-purple-400 hover:text-purple-300 underline mt-4 inline-block text-lg">
+          <p className="text-gray-600 text-lg">Không tìm thấy dự án.</p>
+          <Link href="/projects" className="text-black hover:text-gray-700 underline mt-4 inline-block text-lg">
             Quay lại danh sách dự án
           </Link>
         </div>
@@ -74,7 +74,7 @@ export default function ProjectDetailPage() {
     <MainLayout>
       <Link
         href="/projects"
-        className="inline-flex items-center text-gray-400 hover:text-purple-400 mb-8 transition-colors"
+        className="inline-flex items-center text-gray-600 hover:text-black mb-8 transition-colors"
       >
         <ArrowLeft size={20} className="mr-2" />
         Quay lại danh sách dự án
@@ -102,14 +102,14 @@ export default function ProjectDetailPage() {
           </div>
 
           <div className="prose max-w-none mb-12">
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
               {project.longDescription || project.description}
             </p>
           </div>
 
           {/* Tech Stack */}
           <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Công nghệ sử dụng</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Công nghệ sử dụng</h2>
             <TechStack techs={project.techStack} />
           </div>
 
@@ -119,7 +119,6 @@ export default function ProjectDetailPage() {
               <Button
                 variant="outline"
                 onClick={() => window.open(project.links?.vercel, '_blank')}
-                className="border-gray-700 text-white hover:bg-gray-800"
               >
                 <ExternalLink size={20} className="mr-2" />
                 Xem demo
@@ -129,7 +128,6 @@ export default function ProjectDetailPage() {
               <Button
                 variant="outline"
                 onClick={() => window.open(project.links?.github, '_blank')}
-                className="border-gray-700 text-white hover:bg-gray-800"
               >
                 <Github size={20} className="mr-2" />
                 GitHub
@@ -139,7 +137,6 @@ export default function ProjectDetailPage() {
               <Button
                 variant="outline"
                 onClick={() => window.open(project.links?.tiktok, '_blank')}
-                className="border-gray-700 text-white hover:bg-gray-800"
               >
                 <ExternalLink size={20} className="mr-2" />
                 Video
@@ -150,10 +147,10 @@ export default function ProjectDetailPage() {
           {/* Screenshots */}
           {project.images && project.images.length > 0 && (
             <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Hình ảnh</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Hình ảnh</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.images.map((image, index) => (
-                  <div key={index} className="relative w-full aspect-video rounded-lg border border-gray-800 overflow-hidden">
+                  <div key={index} className="relative w-full aspect-video rounded-lg border-2 border-gray-200 overflow-hidden">
                     <Image
                       src={image}
                       alt={`${project.title} screenshot ${index + 1}`}
@@ -167,11 +164,11 @@ export default function ProjectDetailPage() {
           )}
 
           {/* Navigation */}
-          <div className="flex justify-between items-center pt-8 border-t border-gray-800">
+          <div className="flex justify-between items-center pt-8 border-t border-gray-200">
             {prevProject ? (
               <Link
                 href={`/projects/${prevProject.slug}`}
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 ← Dự án trước
               </Link>
@@ -181,7 +178,7 @@ export default function ProjectDetailPage() {
             {nextProject ? (
               <Link
                 href={`/projects/${nextProject.slug}`}
-                className="text-gray-400 hover:text-purple-400 transition-colors"
+                className="text-gray-600 hover:text-black transition-colors"
               >
                 Dự án tiếp theo →
               </Link>

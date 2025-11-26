@@ -20,12 +20,12 @@ export default function CTA() {
     <section ref={ctaRef} className="py-12 md:py-20">
       <div className="max-w-3xl">
         <TextReveal>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-black">
             Có dự án trong đầu?
           </h2>
         </TextReveal>
         <TextReveal delay={0.2}>
-          <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
             Hãy cùng nhau biến ý tưởng của bạn thành hiện thực. Liên hệ ngay để thảo luận về dự án của bạn.
           </p>
         </TextReveal>
@@ -35,7 +35,6 @@ export default function CTA() {
             onClick={() => {
               window.location.href = '/contact'
             }}
-            className="bg-purple-500 hover:bg-purple-600 text-white border-none"
           >
             Liên hệ ngay
           </Button>

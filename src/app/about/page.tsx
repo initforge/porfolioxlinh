@@ -56,20 +56,20 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Giới <span className="text-purple-400">Thiệu</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+          Giới Thiệu
         </h1>
       </motion.div>
 
       {/* Story */}
       <div className="mb-12">
         <TextReveal>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Câu chuyện của tôi</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Câu chuyện của tôi</h2>
         </TextReveal>
         <div className="prose max-w-none">
           {personalInfo.aboutStory.split('\n\n').map((paragraph, index) => (
             <TextReveal key={index} delay={index * 0.1}>
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-6">
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
                 {paragraph}
               </p>
             </TextReveal>
@@ -80,16 +80,16 @@ export default function AboutPage() {
       {/* Skills */}
       {Object.keys(skillsByCategory).length > 0 && (
         <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Kỹ năng</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Kỹ năng</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
-              <div key={category} className="bg-gray-900 rounded-xl p-6">
-                <h3 className="text-xl font-bold mb-4 capitalize text-white">{category}</h3>
+              <div key={category} className="bg-white border-2 border-black rounded-xl p-6">
+                <h3 className="text-xl font-bold mb-4 capitalize text-black">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {categorySkills.map((skill) => (
                     <div
                       key={skill.id}
-                      className="skill-item bg-gray-800 px-3 py-1.5 rounded-full text-sm font-medium text-gray-300"
+                      className="skill-item bg-gray-100 px-3 py-1.5 rounded-full text-sm font-medium text-gray-700"
                     >
                       {skill.icon && <span className="mr-2">{skill.icon}</span>}
                       {skill.name}
@@ -103,8 +103,8 @@ export default function AboutPage() {
       )}
 
       {/* Why Work With Me */}
-      <div className="bg-gray-900 p-8 md:p-10 rounded-xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Tại sao nên làm việc với tôi</h2>
+      <div className="bg-white border-2 border-black p-8 md:p-10 rounded-xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Tại sao nên làm việc với tôi</h2>
         <ul className="space-y-4">
           {[
             'Giao tiếp rõ ràng trong suốt dự án',
@@ -113,8 +113,8 @@ export default function AboutPage() {
             'Hỗ trợ và bảo trì liên tục',
           ].map((point, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-purple-400 font-bold mr-4 text-xl">✓</span>
-              <span className="text-lg text-gray-300 leading-relaxed">{point}</span>
+              <span className="text-black font-bold mr-4 text-xl">✓</span>
+              <span className="text-lg text-gray-700 leading-relaxed">{point}</span>
             </li>
           ))}
         </ul>
