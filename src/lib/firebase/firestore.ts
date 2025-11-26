@@ -141,7 +141,7 @@ export async function getPersonalInfo(): Promise<PersonalInfo | null> {
 
 export async function updatePersonalInfo(info: PersonalInfo): Promise<void> {
   const infoRef = doc(db, 'personalInfo', 'info')
-  await updateDoc(infoRef, info)
+  await updateDoc(infoRef, info as any)
 }
 
 // Services
@@ -181,5 +181,5 @@ export async function getHomeConfig(): Promise<HomeConfig | null> {
 
 export async function updateHomeConfig(config: HomeConfig): Promise<void> {
   const configRef = doc(db, 'homeConfig', 'config')
-  await updateDoc(configRef, config)
+  await updateDoc(configRef, config as any)
 }
