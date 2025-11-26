@@ -37,7 +37,7 @@ export default function ProfileCard() {
   }
 
   return (
-    <div className="bg-white border-2 border-black rounded-2xl p-10 h-fit sticky top-8">
+    <div className="bg-white border-2 border-black rounded-2xl p-10 h-fit sticky top-8 mx-auto max-w-[320px]">
       {/* Avatar - Always show, even if no image */}
       <div className="relative w-[160px] h-[160px] mx-auto mb-10 rounded-full overflow-hidden border-4 border-black bg-gray-100">
         {personalInfo?.avatar ? (

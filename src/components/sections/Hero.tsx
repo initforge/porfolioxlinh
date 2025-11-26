@@ -64,22 +64,47 @@ export default function Hero() {
       {/* Content */}
       <motion.div style={{ opacity, scale }} className="relative z-10">
         <div className="max-w-5xl">
-          {/* Headline - Large, split into 4 lines like reference */}
+          {/* Headline - Reduced size */}
           <TextReveal delay={0.2}>
-            <h1 className="text-[96px] font-bold mb-12 leading-[1.05] text-black tracking-[-0.02em]">
+            <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em]">
               Biến Ý Tưởng<br />Của Bạn<br />Thành Hiện<br />Thực
             </h1>
           </TextReveal>
           
-          {/* Description - 2 lines, simple text */}
+          {/* Description - Reduced size */}
           <TextReveal delay={0.3}>
-            <div className="space-y-1">
-              <p className="text-[22px] text-black leading-[1.6]">
+            <div className="space-y-2 mb-10">
+              <p className="text-[18px] md:text-[20px] text-black leading-[1.6]">
                 Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn.
               </p>
-              <p className="text-[22px] text-black leading-[1.6]">
+              <p className="text-[18px] md:text-[20px] text-black leading-[1.6]">
                 Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.
               </p>
+            </div>
+          </TextReveal>
+
+          {/* CTA Buttons */}
+          <TextReveal delay={0.4}>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => {
+                  window.location.href = '/contact'
+                }}
+                size="lg"
+                className="text-lg px-8 py-4"
+              >
+                Liên hệ
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => {
+                  window.location.href = '/projects'
+                }}
+                className="text-lg px-8 py-4"
+              >
+                Xem dự án →
+              </Button>
             </div>
           </TextReveal>
         </div>
