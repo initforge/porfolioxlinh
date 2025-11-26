@@ -1,16 +1,17 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/services', label: 'Services' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/', label: 'Trang chủ' },
+  { href: '/projects', label: 'Dự án' },
+  { href: '/services', label: 'Dịch vụ' },
+  { href: '/about', label: 'Giới thiệu' },
+  { href: '/contact', label: 'Liên hệ' },
 ]
 
 export default function Navigation() {
@@ -59,13 +60,18 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleSmoothScroll(e, item.href)}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors relative group ${
                   pathname === item.href
-                    ? 'text-black border-b-2 border-black'
+                    ? 'text-black'
                     : 'text-gray-600 hover:text-black'
                 }`}
               >
                 {item.label}
+                <span
+                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full ${
+                    pathname === item.href ? 'w-full' : ''
+                  }`}
+                />
               </Link>
             ))}
           </div>
@@ -81,24 +87,38 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleSmoothScroll(e, item.href)}
-                className={`block py-2 text-base font-medium transition-colors ${
-                  pathname === item.href
-                    ? 'text-black border-l-4 border-black pl-4'
-                    : 'text-gray-600 hover:text-black pl-4'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        )}
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden py-4 border-t border-gray-200 overflow-hidden"
+            >
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link
+                    href={item.href}
+                    onClick={(e) => handleSmoothScroll(e, item.href)}
+                    className={`block py-2 text-base font-medium transition-colors ${
+                      pathname === item.href
+                        ? 'text-black border-l-4 border-black pl-4'
+                        : 'text-gray-600 hover:text-black pl-4'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   )

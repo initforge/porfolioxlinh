@@ -54,7 +54,7 @@ export default function ProjectDetailPage() {
       <div className="pt-32 pb-20">
         <Container>
           <div className="text-center">
-            <p className="text-gray-500">Loading project...</p>
+            <p className="text-gray-500 text-lg">Đang tải dự án...</p>
           </div>
         </Container>
       </div>
@@ -66,9 +66,9 @@ export default function ProjectDetailPage() {
       <div className="pt-32 pb-20">
         <Container>
           <div className="text-center">
-            <p className="text-gray-500">Project not found.</p>
-            <Link href="/projects" className="text-black underline mt-4 inline-block">
-              Back to Projects
+            <p className="text-gray-500 text-lg">Không tìm thấy dự án.</p>
+            <Link href="/projects" className="text-black underline mt-4 inline-block text-lg">
+              Quay lại danh sách dự án
             </Link>
           </div>
         </Container>
@@ -87,7 +87,7 @@ export default function ProjectDetailPage() {
           className="inline-flex items-center text-gray-600 hover:text-black mb-8 transition-colors"
         >
           <ArrowLeft size={20} className="mr-2" />
-          Back to Projects
+          Quay lại danh sách dự án
         </Link>
 
         <div className="project-content">
@@ -100,22 +100,22 @@ export default function ProjectDetailPage() {
 
           {/* Project Info */}
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">{project.title}</h1>
             <div className="flex items-center gap-4 mb-8 text-gray-600">
               <span>{project.year}</span>
               <span>•</span>
               <span className="capitalize">{project.category}</span>
             </div>
 
-            <div className="prose max-w-none mb-8">
-              <p className="text-lg text-gray-700 leading-relaxed">
+            <div className="prose max-w-none mb-12">
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                 {project.longDescription || project.description}
               </p>
             </div>
 
             {/* Tech Stack */}
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">Tech Stack</h2>
+            <div className="mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Công nghệ sử dụng</h2>
               <TechStack techs={project.techStack} />
             </div>
 
@@ -127,7 +127,7 @@ export default function ProjectDetailPage() {
                   onClick={() => window.open(project.links?.vercel, '_blank')}
                 >
                   <ExternalLink size={20} className="mr-2" />
-                  Live Demo
+                  Xem demo
                 </Button>
               )}
               {project.links?.github && (
@@ -153,7 +153,7 @@ export default function ProjectDetailPage() {
             {/* Screenshots */}
             {project.images && project.images.length > 0 && (
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-4">Screenshots</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Hình ảnh</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.images.map((image, index) => (
                     <div key={index} className="relative w-full aspect-video rounded-lg border-2 border-gray-200 overflow-hidden">
@@ -176,7 +176,7 @@ export default function ProjectDetailPage() {
                   href={`/projects/${prevProject.slug}`}
                   className="text-gray-600 hover:text-black transition-colors"
                 >
-                  ← Previous Project
+                  ← Dự án trước
                 </Link>
               ) : (
                 <div />
@@ -186,7 +186,7 @@ export default function ProjectDetailPage() {
                   href={`/projects/${nextProject.slug}`}
                   className="text-gray-600 hover:text-black transition-colors"
                 >
-                  Next Project →
+                  Dự án tiếp theo →
                 </Link>
               ) : (
                 <div />

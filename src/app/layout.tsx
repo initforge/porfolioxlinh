@@ -6,6 +6,7 @@ import '../styles/animations.css'
 import Navigation from '@/components/layout/Navigation'
 import Footer from '@/components/layout/Footer'
 import ScrollProgress from '@/components/ui/ScrollProgress'
+import CustomCursor from '@/components/ui/CustomCursor'
 import { defaultMetadata } from './metadata'
 
 const inter = Inter({ 
@@ -23,8 +24,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="vi" className={inter.variable}>
       <body>
+        <CustomCursor />
         <ScrollProgress />
         <Navigation />
         <main>{children}</main>

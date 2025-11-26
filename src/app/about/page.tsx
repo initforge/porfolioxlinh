@@ -1,7 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import Container from '@/components/layout/Container'
+import LoadingSpinner from '@/components/ui/LoadingSpinner'
+import TextReveal from '@/components/ui/TextReveal'
 import { getPersonalInfo, getSkills } from '@/lib/firebase/firestore'
 import { PersonalInfo } from '@/types/admin'
 import { Skill } from '@/types/skill'
@@ -36,15 +39,7 @@ export default function AboutPage() {
   }, [skills])
 
   if (!personalInfo) {
-    return (
-      <div className="pt-32 pb-20">
-        <Container>
-          <div className="text-center">
-            <p className="text-gray-500">Loading...</p>
-          </div>
-        </Container>
-      </div>
-    )
+    return <LoadingSpinner />
   }
 
   const skillsByCategory = skills.reduce((acc, skill) => {
@@ -59,7 +54,7 @@ export default function AboutPage() {
     <div className="pt-32 pb-20">
       <Container>
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-12 text-center">About Me</h1>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-center">Giới thiệu</h1>
 
           {/* Avatar */}
           {personalInfo.avatar && (
@@ -77,12 +72,16 @@ export default function AboutPage() {
 
           {/* Story */}
           <div className="story-section mb-16">
-            <h2 className="text-3xl font-bold mb-6">My Story</h2>
+            <TextReveal>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Câu chuyện của tôi</h2>
+            </TextReveal>
             <div className="prose max-w-none">
               {personalInfo.aboutStory.split('\n\n').map((paragraph, index) => (
-                <p key={index} className="text-lg text-gray-700 leading-relaxed mb-4">
-                  {paragraph}
-                </p>
+                <TextReveal key={index} delay={index * 0.1}>
+                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                    {paragraph}
+                  </p>
+                </TextReveal>
               ))}
             </div>
           </div>
@@ -90,7 +89,7 @@ export default function AboutPage() {
           {/* Skills */}
           {Object.keys(skillsByCategory).length > 0 && (
             <div className="mb-16">
-              <h2 className="text-3xl font-bold mb-8">Skills</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8">Kỹ năng</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
                   <div key={category}>
@@ -113,18 +112,18 @@ export default function AboutPage() {
           )}
 
           {/* Why Work With Me */}
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <h2 className="text-3xl font-bold mb-6">Why Work With Me</h2>
-            <ul className="space-y-4">
+          <div className="bg-gray-50 p-10 md:p-12 rounded-lg">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Tại sao nên làm việc với tôi</h2>
+            <ul className="space-y-6">
               {[
-                'Clear communication throughout the project',
-                'High-quality, maintainable code',
-                'Timely delivery and respect for deadlines',
-                'Ongoing support and maintenance',
+                'Giao tiếp rõ ràng trong suốt dự án',
+                'Code chất lượng cao, dễ bảo trì',
+                'Giao hàng đúng hạn và tôn trọng deadline',
+                'Hỗ trợ và bảo trì liên tục',
               ].map((point, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-black font-bold mr-3">✓</span>
-                  <span className="text-gray-700">{point}</span>
+                  <span className="text-black font-bold mr-4 text-xl">✓</span>
+                  <span className="text-lg md:text-xl text-gray-700 leading-relaxed">{point}</span>
                 </li>
               ))}
             </ul>

@@ -57,25 +57,25 @@ export default function ContactPage() {
     <div className="pt-32 pb-20">
       <Container>
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h1>
-          <p className="text-xl text-gray-600 mb-12">
-            Have a project in mind? Let&apos;s discuss how I can help bring your vision to life.
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Liên hệ</h1>
+          <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-3xl leading-relaxed">
+            Có dự án trong đầu? Hãy thảo luận về cách tôi có thể giúp biến ý tưởng của bạn thành hiện thực.
           </p>
 
           <div className="contact-section grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Gửi tin nhắn</h2>
               {submitted ? (
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
-                  <p className="text-green-800 font-medium">
-                    Thank you! Your message has been sent. I&apos;ll get back to you soon.
+                  <p className="text-green-800 font-medium text-lg">
+                    Cảm ơn bạn! Tin nhắn của bạn đã được gửi. Tôi sẽ phản hồi sớm nhất có thể.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <Input
-                    label="Name"
+                    label="Tên"
                     type="text"
                     required
                     value={formData.name}
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   />
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Message
+                      Tin nhắn
                     </label>
                     <textarea
                       required
@@ -101,7 +101,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <Button type="submit" disabled={submitting} size="lg" className="w-full">
-                    {submitting ? 'Sending...' : 'Send Message'}
+                    {submitting ? 'Đang gửi...' : 'Gửi tin nhắn'}
                   </Button>
                 </form>
               )}
@@ -109,7 +109,7 @@ export default function ContactPage() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">Thông tin liên hệ</h2>
               <div className="space-y-6">
                 {personalInfo?.email && (
                   <div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
 
                 {socialLinks.length > 0 && (
                   <div>
-                    <h3 className="font-medium mb-4">Social Links</h3>
+                    <h3 className="font-medium mb-4 text-lg">Liên kết mạng xã hội</h3>
                     <div className="space-y-3">
                       {socialLinks.map((link) => (
                         <a
