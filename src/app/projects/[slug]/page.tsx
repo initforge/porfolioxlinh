@@ -102,14 +102,14 @@ export default function ProjectDetailPage() {
           </div>
 
           <div className="prose max-w-none mb-12">
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
               {project.longDescription || project.description}
             </p>
           </div>
 
           {/* Tech Stack */}
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Công nghệ sử dụng</h2>
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Công nghệ sử dụng</h2>
             <TechStack techs={project.techStack} />
           </div>
 
@@ -146,8 +146,8 @@ export default function ProjectDetailPage() {
 
           {/* Screenshots */}
           {project.images && project.images.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Hình ảnh</h2>
+            <div className="mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Hình ảnh</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.images.map((image, index) => (
                   <div key={index} className="relative w-full aspect-video rounded-lg border-2 border-gray-200 overflow-hidden">

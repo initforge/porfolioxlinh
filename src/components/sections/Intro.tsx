@@ -30,7 +30,7 @@ export default function Intro() {
   return (
     <section ref={introRef} className="py-12 md:py-20">
       <TextReveal>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-black">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-black">
           Về Tôi
         </h2>
       </TextReveal>
@@ -38,7 +38,7 @@ export default function Intro() {
         {paragraphs.map((paragraph, index) => (
           <ParallaxSection key={index} speed={0.3}>
             <TextReveal delay={index * 0.1}>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
                 {paragraph}
               </p>
             </TextReveal>

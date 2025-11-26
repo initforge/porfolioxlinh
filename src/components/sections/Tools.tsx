@@ -37,12 +37,12 @@ export default function Tools() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-12"
+        className="mb-16"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Công cụ & Kỹ năng
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed">
           Những công nghệ và công cụ tôi sử dụng để tạo ra các sản phẩm chất lượng cao
         </p>
       </motion.div>

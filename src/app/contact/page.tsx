@@ -58,10 +58,10 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Hãy Tạo Điều Gì Đó Tuyệt Vời
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
           Có dự án trong đầu? Hãy thảo luận về cách tôi có thể giúp biến ý tưởng của bạn thành hiện thực.
         </p>
       </motion.div>

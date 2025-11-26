@@ -38,12 +38,12 @@ export default function FeaturedProjects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-12"
+        className="mb-16"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Dự án Gần Đây
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed">
           Một số dự án gần đây thể hiện khả năng phát triển web hiện đại và sáng tạo
         </p>
       </motion.div>

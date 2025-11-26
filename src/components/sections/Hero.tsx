@@ -65,16 +65,21 @@ export default function Hero() {
       <motion.div style={{ opacity, scale }} className="relative z-10">
         <div className="max-w-4xl">
           {/* Headline */}
-          <TextReveal delay={0.2} className="mb-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-black">
-              Biến Ý Tưởng Của Bạn Thành Hiện Thực
+          <TextReveal delay={0.2} className="mb-8">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-black">
+              Biến Ý Tưởng Của Bạn<br />Thành Hiện Thực
             </h1>
           </TextReveal>
           
           <TextReveal delay={0.3}>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
-              {personalInfo?.intro || 'Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn. Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.'}
-            </p>
+            <div className="space-y-4 mb-10">
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn.
+              </p>
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+                Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.
+              </p>
+            </div>
           </TextReveal>
 
           {/* CTA Buttons */}
@@ -85,6 +90,7 @@ export default function Hero() {
                   window.location.href = '/contact'
                 }}
                 size="lg"
+                className="text-lg px-8 py-4"
               >
                 Liên hệ
               </Button>
@@ -94,6 +100,7 @@ export default function Hero() {
                 onClick={() => {
                   window.location.href = '/projects'
                 }}
+                className="text-lg px-8 py-4"
               >
                 Xem dự án →
               </Button>

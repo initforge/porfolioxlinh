@@ -41,10 +41,10 @@ export default function ProjectsPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Tất cả Dự án
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
           Tuyển tập các dự án gần đây của tôi
         </p>
       </motion.div>

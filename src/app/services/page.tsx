@@ -42,10 +42,10 @@ export default function ServicesPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
           Dịch Vụ
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+        <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
           Những gì tôi có thể giúp bạn
         </p>
       </motion.div>
@@ -69,8 +69,8 @@ export default function ServicesPage() {
       )}
 
       {/* Process */}
-      <div className="mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-black">Quy trình làm việc</h2>
+      <div className="mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-black">Quy trình làm việc</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {[
             { step: '01', title: 'Khám phá', desc: 'Tìm hiểu nhu cầu và mục tiêu của bạn' },
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       {/* Tech Stack */}
       {skills.length > 0 && (
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Công nghệ tôi sử dụng</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Công nghệ tôi sử dụng</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill) => (
               <div

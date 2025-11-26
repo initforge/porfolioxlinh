@@ -56,20 +56,20 @@ export default function AboutPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-black">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-black">
           Giới Thiệu
         </h1>
       </motion.div>
 
       {/* Story */}
-      <div className="mb-12">
+      <div className="mb-16">
         <TextReveal>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Câu chuyện của tôi</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Câu chuyện của tôi</h2>
         </TextReveal>
         <div className="prose max-w-none">
           {personalInfo.aboutStory.split('\n\n').map((paragraph, index) => (
             <TextReveal key={index} delay={index * 0.1}>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
                 {paragraph}
               </p>
             </TextReveal>
@@ -79,8 +79,8 @@ export default function AboutPage() {
 
       {/* Skills */}
       {Object.keys(skillsByCategory).length > 0 && (
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-black">Kỹ năng</h2>
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Kỹ năng</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
               <div key={category} className="bg-white border-2 border-black rounded-xl p-6">
