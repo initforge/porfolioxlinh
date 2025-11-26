@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { checkAuth } from '@/lib/firebase/auth'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
     const authenticated = await checkAuth()

@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { verifyPassword, setAuthCookie } from '@/lib/firebase/auth'
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
     const { password } = await request.json()
