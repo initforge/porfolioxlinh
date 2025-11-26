@@ -48,11 +48,11 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+      className="relative py-12 md:py-20"
     >
       {/* Three.js Background - Lazy loaded */}
       {showThreeJS && (
-        <div className="absolute inset-0 z-0 opacity-20">
+        <div className="absolute inset-0 z-0 opacity-10">
           <Suspense fallback={null}>
             <Scene>
               <BackgroundParticles />
@@ -63,53 +63,46 @@ export default function Hero() {
 
       {/* Content */}
       <motion.div style={{ opacity, scale }} className="relative z-10">
-        <Container>
-          <div className="max-w-5xl mx-auto">
-            {/* Name & Role */}
-            <TextReveal delay={0.2} className="mb-8">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-4 leading-tight">
-                {personalInfo?.name || 'Tên của bạn'}
-              </h1>
-            </TextReveal>
-            
-            <TextReveal delay={0.3}>
-              <p className="text-2xl md:text-3xl lg:text-4xl text-gray-600 font-medium">
-                {personalInfo?.tagline || 'Freelance Web Developer'}
-              </p>
-            </TextReveal>
-            
-            {personalInfo?.intro && (
-              <TextReveal delay={0.4}>
-                <p className="text-lg md:text-xl text-gray-500 mt-6 max-w-3xl leading-relaxed">
-                  {personalInfo.intro}
-                </p>
-              </TextReveal>
-            )}
+        <div className="max-w-4xl">
+          {/* Headline */}
+          <TextReveal delay={0.2} className="mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              Biến Ý Tưởng Của Bạn{' '}
+              <span className="text-purple-400">Thành Hiện Thực</span>
+            </h1>
+          </TextReveal>
+          
+          <TextReveal delay={0.3}>
+            <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl">
+              {personalInfo?.intro || 'Đam mê tạo ra những trải nghiệm kỹ thuật số trực quan và hấp dẫn. Chuyên biến ý tưởng thành những sản phẩm được chế tác đẹp mắt.'}
+            </p>
+          </TextReveal>
 
-            {/* CTA Buttons */}
-            <TextReveal delay={0.5}>
-              <div className="flex flex-col sm:flex-row gap-4 mb-16 mt-12">
-                <Button
-                  onClick={() => {
-                    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
-                  size="lg"
-                >
-                  Xem dự án
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => {
-                    window.location.href = '/contact'
-                  }}
-                >
-                  Liên hệ
-                </Button>
-              </div>
-            </TextReveal>
-          </div>
-        </Container>
+          {/* CTA Buttons */}
+          <TextReveal delay={0.4}>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => {
+                  window.location.href = '/contact'
+                }}
+                size="lg"
+                className="bg-purple-500 hover:bg-purple-600 text-white border-none"
+              >
+                Liên hệ
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => {
+                  window.location.href = '/projects'
+                }}
+                className="border-gray-700 text-white hover:bg-gray-800"
+              >
+                Xem dự án →
+              </Button>
+            </div>
+          </TextReveal>
+        </div>
       </motion.div>
     </section>
   )

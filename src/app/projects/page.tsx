@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import Container from '@/components/layout/Container'
+import { motion } from 'framer-motion'
+import MainLayout from '@/components/layout/MainLayout'
 import ProjectGrid from '@/components/work/ProjectGrid'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import { getProjects } from '@/lib/firebase/firestore'
@@ -33,24 +34,31 @@ export default function ProjectsPage() {
   }, [projects])
 
   return (
-    <div className="pt-32 pb-20">
-      <Container>
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">Dự án</h1>
-        <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-3xl leading-relaxed">
+    <MainLayout>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-12"
+      >
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Tất cả <span className="text-purple-400">Dự án</span>
+        </h1>
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
           Tuyển tập các dự án gần đây của tôi
         </p>
+      </motion.div>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : projects.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-gray-500 text-lg">Không tìm thấy dự án nào.</p>
-          </div>
-        ) : (
-          <ProjectGrid projects={projects} />
-        )}
-      </Container>
-    </div>
+      {loading ? (
+        <LoadingSpinner />
+      ) : projects.length === 0 ? (
+        <div className="text-center py-20">
+          <p className="text-gray-400 text-lg">Không tìm thấy dự án nào.</p>
+        </div>
+      ) : (
+        <ProjectGrid projects={projects} />
+      )}
+    </MainLayout>
   )
 }
 

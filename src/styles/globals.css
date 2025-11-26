@@ -147,16 +147,6 @@ p {
   transition: transform 0.1s ease-out;
 }
 
-/* Hide default cursor on desktop when custom cursor is active */
-@media (min-width: 768px) {
-  body {
-    cursor: none;
-  }
-  
-  a, button, .project-card, .tool-item {
-    cursor: none;
-  }
-}
 
 /* Smooth page transitions */
 .page-transition {

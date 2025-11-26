@@ -28,31 +28,23 @@ export default function Intro() {
   const paragraphs = personalInfo.aboutStory.split('\n\n').filter((p) => p.trim())
 
   return (
-    <section ref={introRef} className="py-24 md:py-40 bg-white relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-50" />
-      
-      <Container>
-        <div className="max-w-4xl mx-auto relative z-10">
-          <TextReveal>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12">
-              Về tôi
-            </h2>
-          </TextReveal>
-          <div className="space-y-6">
-            {paragraphs.map((paragraph, index) => (
-              <ParallaxSection key={index} speed={0.3}>
-                <TextReveal delay={index * 0.1}>
-                  <p className="text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed">
-                    {paragraph}
-                  </p>
-                </TextReveal>
-              </ParallaxSection>
-            ))}
-          </div>
-        </div>
-      </Container>
+    <section ref={introRef} className="py-12 md:py-20">
+      <TextReveal>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white">
+          Về <span className="text-purple-400">Tôi</span>
+        </h2>
+      </TextReveal>
+      <div className="space-y-6">
+        {paragraphs.map((paragraph, index) => (
+          <ParallaxSection key={index} speed={0.3}>
+            <TextReveal delay={index * 0.1}>
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                {paragraph}
+              </p>
+            </TextReveal>
+          </ParallaxSection>
+        ))}
+      </div>
     </section>
   )
 }
