@@ -62,8 +62,8 @@ export default function ProfileCard() {
       style={{
         top: 'var(--sticky-top, 50%)',
         transform: 'translateY(-50%)',
-        marginLeft: '40px',
-        marginRight: '40px',
+        marginLeft: '80px',
+        marginRight: '80px',
       }}
     >
       {/* Avatar - Always show, even if no image */}
