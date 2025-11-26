@@ -59,7 +59,7 @@ export default function ContactPage() {
         <div className="max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h1>
           <p className="text-xl text-gray-600 mb-12">
-            Have a project in mind? Let's discuss how I can help bring your vision to life.
+            Have a project in mind? Let&apos;s discuss how I can help bring your vision to life.
           </p>
 
           <div className="contact-section grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -69,7 +69,7 @@ export default function ContactPage() {
               {submitted ? (
                 <div className="bg-green-50 border-2 border-green-200 rounded-lg p-6">
                   <p className="text-green-800 font-medium">
-                    Thank you! Your message has been sent. I'll get back to you soon.
+                    Thank you! Your message has been sent. I&apos;ll get back to you soon.
                   </p>
                 </div>
               ) : (

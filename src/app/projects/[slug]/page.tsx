@@ -10,6 +10,7 @@ import { getProjectBySlug, getProjects } from '@/lib/firebase/firestore'
 import { Project } from '@/types/project'
 import { ExternalLink, Github, ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { animateOnScroll } from '@/lib/three/animations'
 
 export default function ProjectDetailPage() {
@@ -155,12 +156,14 @@ export default function ProjectDetailPage() {
                 <h2 className="text-2xl font-bold mb-4">Screenshots</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {project.images.map((image, index) => (
-                    <img
-                      key={index}
-                      src={image}
-                      alt={`${project.title} screenshot ${index + 1}`}
-                      className="w-full h-auto rounded-lg border-2 border-gray-200"
-                    />
+                    <div key={index} className="relative w-full aspect-video rounded-lg border-2 border-gray-200 overflow-hidden">
+                      <Image
+                        src={image}
+                        alt={`${project.title} screenshot ${index + 1}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>

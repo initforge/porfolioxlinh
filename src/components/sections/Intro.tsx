@@ -19,7 +19,7 @@ export default function Intro() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">About Me</h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            I'm a freelance web developer passionate about creating beautiful, functional,
+            I&apos;m a freelance web developer passionate about creating beautiful, functional,
             and user-friendly digital experiences. With expertise in modern web technologies,
             I help businesses bring their ideas to life through code.
           </p>

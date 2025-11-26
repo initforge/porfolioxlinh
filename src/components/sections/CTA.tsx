@@ -20,7 +20,7 @@ export default function CTA() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">Have a Project in Mind?</h2>
           <p className="text-lg md:text-xl text-gray-300 mb-8">
-            Let's work together to bring your vision to life. Get in touch and let's discuss your project.
+            Let&apos;s work together to bring your vision to life. Get in touch and let&apos;s discuss your project.
           </p>
           <Button
             variant="secondary"
