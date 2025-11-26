@@ -34,7 +34,7 @@ export default function Intro() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       <TextReveal>
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-black">
-          Về Tôi
+          <span className="text-accent-600">Về</span> Tôi
         </h2>
       </TextReveal>
       <div className="space-y-6">

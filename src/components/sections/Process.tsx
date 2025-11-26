@@ -34,9 +34,15 @@ const processSteps = [
 
 export default function Process() {
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative">
+    <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
       {/* Decorative line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-300 to-transparent"></div>
+      
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent-300 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-accent-200 rounded-full blur-3xl"></div>
+      </div>
       
       <Container>
         <motion.div
@@ -44,11 +50,11 @@ export default function Process() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16"
+          className="mb-16 relative z-10"
         >
           <TextReveal>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
-              Quy trình làm việc
+              Quy trình <span className="text-accent-600">làm việc</span>
             </h2>
           </TextReveal>
           <TextReveal delay={0.1}>
@@ -58,7 +64,7 @@ export default function Process() {
           </TextReveal>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-16 relative z-10">
           {processSteps.map((item, index) => (
             <motion.div
               key={index}
@@ -67,7 +73,7 @@ export default function Process() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white border-2 border-gray-300 rounded-xl p-6 md:p-8 hover:border-black hover:bg-gray-50 transition-all duration-300 relative group"
+              className="bg-white border-2 border-gray-300 rounded-xl p-6 md:p-8 hover:border-accent-400 hover:bg-gradient-to-br hover:from-accent-50 hover:to-white transition-all duration-300 relative group shadow-md hover:shadow-xl hover:shadow-accent/20"
             >
               {/* Step number - large and subtle */}
               <div className="absolute top-4 right-4 text-6xl md:text-7xl font-bold text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
@@ -101,6 +107,7 @@ export default function Process() {
           className="text-center"
         >
           <Button
+            variant="accent"
             onClick={() => window.location.href = '/contact'}
             size="lg"
             className="text-lg px-8 py-4"

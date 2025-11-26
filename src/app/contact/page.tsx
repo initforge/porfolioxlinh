@@ -58,11 +58,13 @@ export default function ContactPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
-          Hãy Tạo Điều Gì Đó Tuyệt Vời
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black max-w-4xl">
+          Hãy Tạo<br />
+          <span className="text-accent-600">Điều Gì Đó</span><br />
+          Tuyệt Vời
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
-          Có dự án trong đầu? Hãy thảo luận về cách tôi có thể giúp biến ý tưởng của bạn thành hiện thực.
+          Có dự án trong đầu? Hãy <span className="text-accent-600 font-semibold">thảo luận</span> về cách tôi có thể giúp <span className="text-accent-600 font-semibold">biến ý tưởng</span> của bạn thành hiện thực.
         </p>
       </motion.div>
 

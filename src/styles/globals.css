@@ -16,10 +16,36 @@
   --gray-800: #262626;
   --gray-900: #171717;
   
+  /* Accent colors - Teal/Blue tones */
+  --accent-50: #F0FDFA;
+  --accent-100: #CCFBF1;
+  --accent-200: #99F6E4;
+  --accent-300: #5EEAD4;
+  --accent-400: #2DD4BF;
+  --accent-500: #14B8A6;
+  --accent-600: #0D9488;
+  --accent-700: #0F766E;
+  --accent-800: #115E59;
+  --accent-900: #134E4A;
+  
   /* Subtle gradients for depth */
   --gradient-gray-light: linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 100%);
   --gradient-gray-medium: linear-gradient(180deg, #F5F5F5 0%, #E5E5E5 100%);
   --gradient-gray-dark: linear-gradient(180deg, #E5E5E5 0%, #D4D4D4 100%);
+  
+  /* Accent gradients */
+  --gradient-accent-subtle: linear-gradient(135deg, rgba(20, 184, 166, 0.05) 0%, rgba(20, 184, 166, 0.02) 100%);
+  --gradient-accent-light: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%);
+  --gradient-accent-medium: linear-gradient(135deg, rgba(20, 184, 166, 0.15) 0%, rgba(20, 184, 166, 0.08) 100%);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-accent: 0 10px 30px -5px rgba(20, 184, 166, 0.3);
+  --shadow-accent-lg: 0 20px 40px -10px rgba(20, 184, 166, 0.4);
 }
 
 * {
@@ -112,11 +138,23 @@ p {
 /* Enhanced button effects */
 .button-3d {
   transform-style: preserve-3d;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
 .button-3d:hover {
   transform: translateY(-4px) translateZ(0);
+  box-shadow: var(--shadow-lg);
+}
+
+.button-accent {
+  background: linear-gradient(135deg, var(--accent-600) 0%, var(--accent-700) 100%);
+  color: white;
+  box-shadow: var(--shadow-accent);
+}
+
+.button-accent:hover {
+  background: linear-gradient(135deg, var(--accent-700) 0%, var(--accent-800) 100%);
+  box-shadow: var(--shadow-accent-lg);
 }
 
 .button-glow {
@@ -221,6 +259,15 @@ p {
   display: inline-block;
 }
 
+.decorative-dot-accent {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-500);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
+}
+
 /* Subtle background patterns */
 .bg-pattern {
   background-image: 
@@ -231,6 +278,52 @@ p {
       rgba(0, 0, 0, 0.02) 10px,
       rgba(0, 0, 0, 0.02) 20px
     );
+}
+
+.bg-pattern-accent {
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(20, 184, 166, 0.03) 10px,
+      rgba(20, 184, 166, 0.03) 20px
+    );
+}
+
+/* Card shadows and depth */
+.card-elevated {
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.card-accent {
+  border: 2px solid var(--gray-300);
+  background: var(--gradient-accent-subtle);
+  transition: all 0.3s ease;
+}
+
+.card-accent:hover {
+  border-color: var(--accent-400);
+  background: var(--gradient-accent-light);
+  box-shadow: var(--shadow-accent);
+}
+
+/* Text with accent */
+.text-accent {
+  color: var(--accent-600);
+}
+
+.text-accent-gradient {
+  background: linear-gradient(135deg, var(--accent-600) 0%, var(--accent-700) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Enhanced spacing utilities */

@@ -42,8 +42,9 @@ export default function ServicesPage() {
         transition={{ duration: 0.6 }}
         className="mb-12"
       >
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black">
-          Dịch Vụ
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-black max-w-4xl">
+          <span className="text-accent-600">Dịch</span><br />
+          Vụ
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
           Những gì tôi có thể giúp bạn
@@ -56,7 +57,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <div
               key={service.id}
-              className="service-card bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-black transition-all duration-300 h-full"
+              className="service-card bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-accent-400 hover:bg-gradient-to-br hover:from-accent-50 hover:to-white transition-all duration-300 h-full shadow-sm hover:shadow-md hover:shadow-accent/20"
             >
               {service.icon && (
                 <div className="text-4xl mb-4">{service.icon}</div>
@@ -70,9 +71,12 @@ export default function ServicesPage() {
 
       {/* Process */}
       <div className="mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Quy trình làm việc</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
+          <span className="text-accent-600">Quy trình</span><br />
+          làm việc
+        </h2>
         <p className="text-xl md:text-2xl text-gray-600 max-w-3xl leading-relaxed mb-12">
-          Một quy trình được tinh chỉnh qua nhiều dự án, đảm bảo mọi bước đều được thực hiện một cách chuyên nghiệp và hiệu quả.
+          Một quy trình được <span className="text-accent-600 font-semibold">tinh chỉnh</span> qua nhiều dự án, đảm bảo mọi bước đều được thực hiện một cách <span className="text-accent-600 font-semibold">chuyên nghiệp</span> và <span className="text-accent-600 font-semibold">hiệu quả</span>.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {[
@@ -88,7 +92,7 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white border-2 border-gray-300 rounded-xl p-6 md:p-8 text-center hover:border-black hover:bg-gray-50 transition-all duration-300 relative group"
+              className="bg-white border-2 border-gray-300 rounded-xl p-6 md:p-8 text-center hover:border-accent-400 hover:bg-gradient-to-br hover:from-accent-50 hover:to-white transition-all duration-300 relative group shadow-md hover:shadow-xl hover:shadow-accent/20"
             >
               <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100 group-hover:text-gray-200 transition-colors duration-300">
                 {item.step}
@@ -104,7 +108,10 @@ export default function ServicesPage() {
       {/* Tech Stack */}
       {skills.length > 0 && (
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black">Công nghệ tôi sử dụng</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 text-black max-w-4xl">
+            <span className="text-accent-600">Công nghệ</span><br />
+            tôi sử dụng
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {skills.map((skill) => (
               <div

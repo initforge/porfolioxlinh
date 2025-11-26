@@ -48,8 +48,13 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white"
+      className="relative py-16 md:py-24 lg:py-32 bg-gradient-to-b from-gray-50 via-white to-white overflow-hidden"
     >
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-accent-300 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent-200 rounded-full blur-3xl"></div>
+      </div>
       {/* Three.js Background - Lazy loaded */}
       {showThreeJS && (
         <div className="absolute inset-0 z-0 opacity-10">
@@ -62,12 +67,12 @@ export default function Hero() {
       )}
 
       {/* Content */}
-      <motion.div style={{ opacity, scale }} className="relative z-10">
+      <motion.div style={{ opacity, scale }} className="relative z-20">
         <div className="max-w-5xl">
           {/* Headline - Reduced size */}
           <TextReveal delay={0.2}>
             <h1 className="text-[64px] md:text-[72px] font-bold mb-10 leading-[1.1] text-black tracking-[-0.02em]">
-              Biến Ý Tưởng<br />Của Bạn<br />Thành Hiện<br />Thực
+              Biến Ý Tưởng<br />Của Bạn<br />Thành <span className="text-accent-600">Hiện Thực</span>
             </h1>
           </TextReveal>
           
